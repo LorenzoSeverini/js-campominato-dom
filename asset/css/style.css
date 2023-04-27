@@ -1,0 +1,95 @@
+/************************************/
+/********** RESET CSS ***************/
+/************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+}
+
+.myBgColor {
+    background-color: #2b2828;
+}
+
+.myHeight {
+    height: 6.25rem;
+}
+/************************************/
+/********** MAIN CSS **************/
+/************************************/
+div#myGrid {
+    height: calc(100vh - 18.75rem);
+    margin: 0 auto;
+    padding: 3.125rem;
+}
+
+div#myGrid .myBox1 {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    background-color:#977467;
+    border: 2px #94898d solid;
+    cursor: crosshair;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+div#myGrid .myBox2 {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    background-color: #798279;
+    border: 2px  #94898d solid;
+    cursor: crosshair;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+div#myGrid .myBox3 {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    background-color: #685c97;
+    border: 2px  #94898d solid;
+    cursor: crosshair;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* choice colored  */
+div#myGrid .myBox1.myClicked,
+div#myGrid .myBox2.myClicked,
+div#myGrid .myBox3.myClicked{
+    background-color: #53d464;
+}
+
+/* bomb colored */
+div#myGrid .myBox1.myBomb,
+div#myGrid .myBox2.myBomb,
+div#myGrid .myBox3.myBomb{
+    background-color: #d45353;
+}
+/************************************/
+/********** LINK CSS ***************/
+/************************************/
+h3 > a {
+    text-decoration: none;
+    color: #3f73c2f8;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #ffffff;
+}
