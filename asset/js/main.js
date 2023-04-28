@@ -40,24 +40,25 @@ Btngenerate.addEventListener('click', () => {
 
     // on click the background changes color
     grid.addEventListener('click', (event) => {
-        event.target.classList.add('myClicked');
         const myValue = document.getElementById('myDifficulty').value;
         const myBoxes = document.querySelectorAll('.myBox1, .myBox2, .myBox3');
+        // lo score e la somma delle caselle cliccate e crea punteggio finale
         let myScore = 0;
 
-       
         if (myValue == 1) {
             if (myArray.includes(parseInt(event.target.innerHTML))) {
                 event.target.classList.add('myBomb');
                 for (let i = 0; i < myBoxes.length; i++) {
                     myBoxes[i].classList.add('myClicked');
                 }
-                alert('Hai perso!');
-                location.reload();
+                // somma le caselle cliccate e crea punteggio finale 
+                document.getElementById('myScore').innerHTML = `Il tuo punteggio è ${myScore}`;
+
+                // location.reload();
             } else {
                 event.target.classList.add('myClicked');
                 myScore++;
-                document.getElementById('myScore').innerHTML = myScore;
+               
             }
         } else if (myValue == 2) {
             if (myArray.includes(parseInt(event.target.innerHTML))) {
@@ -66,11 +67,10 @@ Btngenerate.addEventListener('click', () => {
                     myBoxes[i].classList.add('myClicked');
                 }
                 alert('Hai perso!');
-                location.reload();
+                // location.reload();
             } else {
                 event.target.classList.add('myClicked');
                 myScore++;
-                document.getElementById('myScore').innerHTML = myScore;
             }
         } else if (myValue == 3) {
             if (myArray.includes(parseInt(event.target.innerHTML))) {
@@ -78,12 +78,11 @@ Btngenerate.addEventListener('click', () => {
                 for (let i = 0; i < myBoxes.length; i++) {
                     myBoxes[i].classList.add('myClicked');
                 }
-                alert('Hai perso!');
-                location.reload();
+                document.getElementById('myScore').innerHTML = `Il tuo punteggio è ${myScore}`;
+                // location.reload();
             } else {
                 event.target.classList.add('myClicked');
                 myScore++;
-                document.getElementById('myScore').innerHTML = myScore;
             }
         }
 
@@ -92,11 +91,8 @@ Btngenerate.addEventListener('click', () => {
             alert('Hai vinto!');
             location.reload();
         }
-    });
 
 
-    grid.addEventListener('dblclick', (event) => {
-        event.target.classList.remove('myClicked');
     });
 
     // generate 16 random numbers for each value of the difficulty level (1 = 100, 2 = 81, 3 = 49)  
@@ -131,7 +127,13 @@ Btngenerate.addEventListener('click', () => {
         }
     }
 
-    console.log(myArray);
+     console.log(myArray);
+
+    grid.addEventListener('dblclick', (event) => {
+        event.target.classList.remove('myClicked');
+    });
+
+    
 });
 
 // on click cancel grid is deleted
